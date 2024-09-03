@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login - ChatHub</title>
+    <style type="text/css" media="all">
+        body{
+            background-color: black;
+            font-family: monospace;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loginContainer{
+            background-color: #222;
+            text-align: center;
+            padding: 20px 10px;
+            margin: 0px 8px;
+            border: 2px solid #555;
+            border-radius: 10px;
+        }
+        .loginContainer p{
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .loginContainer input{
+            background-color: transparent;
+            color: skyblue;
+            text-align: center;
+            font-size: 16px;
+            padding: 8px 4px;
+            outline: none;
+            width: 80%;
+            border: 2px solid #444;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .loginContainer input:hover{
+            background-color: #111;
+            border-color: #333;
+        }
+        .loginContainer input:focus{
+            background-color: #111;
+            border-color: #333;
+        }
+        .loginBtn{
+            background-color: transparent;
+            font-family: monospace;
+            color: rgb(255, 255, 255);
+            border: 2px solid white;
+            padding: 4px 12px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .loginBtn:hover{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="loginContainer">
+        <p>Enter The <span style="color: green;">Key</span> and The <span style="color: green;">UserName</span> To Login !</p> <br />
+        <input type="text" class="username-input" placeholder="UserName"> <br> <br>
+        <input type="text" placeholder="Login Key" class="loginInput"/> <br>
+        <button class="loginBtn">Login</button>
+    </div>
+    
+    <script type="module" src="index.js"></script>
+</html>
