@@ -53,7 +53,7 @@ onValue(chatDataInDB, (snapshot) => {
           </div>`;
           
         }
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        messagesRoot.scrollTop = messagesRoot.scrollHeight;
   } else {
     console.error('No data found at the specified location');
   }
