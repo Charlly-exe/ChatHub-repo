@@ -6,128 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - ChatHub</title>
     <style>
-    body{
-        background-color: black;
-        color: white;
-        margin: 0px;
-        padding: 0px;
-    }
-    .chatContainer{
-        height: 100vh;
-    }
-    .navbar{
-        background-color: #111;
-        width: 100%;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 2px solid #333;
-        padding: 16px 8px;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-    .logo{
-        font-family: Monospace;
-        font-size: 30px;
-        font-weight: 800;
-        user-select: none;
-    }
-    #menu{
-        margin-right: 30px;
-        font-size: 28px;
-        user-select: none;
-    }
-    .messagesContainer{
-        height: 80vh;
-        padding: 0px 8px;
-        overflow: auto;
-        scroll-behavior: smooth;
-    }
-    .user-msg{
-        background-color: #333;
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 8px;
-        margin: 8px 4px;
-        border-radius: 14px 4px;
-        width: fit-content;
-        max-width: 360px;
-        word-wrap: break-word;
-    }
-    #msgInput{
-        background-color: transparent;
-        color: white;
-        font-family: Monospace;
-        font-size: 16px;
-        padding: 8px 4px;
-        outline: none;
-        width: 70%;
-        border: 2px solid #444;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-    #msgInput:hover{
-        border-color: rgba(248, 248, 248, 0.575);
-    }
-    #msgInput:focus{
-        border-color: rgba(30, 165, 147, 0.719);
-    }
-    .msgInputCont{
-        background-color: #111;
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 12px 8px;
-        border-top: 2px solid #444;
-    }
-    #sendMsgBtn{
-        background-color: transparent;
-        font-family: monospace;
-        color: rgb(255, 255, 255);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid #333;
-        padding: 6px 16px;
-        margin-right: 20px;
-        border-radius: 8px;
-        transition: 0.3s;
-    }
-    #sendMsgBtn:hover{
-        background-color: #000000;
-    }
-    #sendMsgBtn:active{
-        background-color: #222;
-    }
-    #sendMsgBtn span{
-        font-size: 25px;
-        font-weight: 800;
-        color: bisque;
-    }
-    .userName{
-        color: rgba(59, 226, 218, 0.829);
-        font-weight: 900;
-        font-size: larger;
-    }
-    .MoreOptionsMenu{
-        background-color: hsl(0, 0%, 10%);
-        position: fixed;
-        height: 100vh;
-        width: 350px;
-        display: none
-    }
-    .hide{
-        display: none;
-    }
+        body{
+            background-color: black;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+        }
+        ::selection{
+            background-color: orange;
+            color: hsl(0, 0%, 0%);
+        }
+        .chatContainer{
+            height: 100vh;
+        }
+        .navbar{
+            background-color: #111;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #333;
+            padding: 16px 8px;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .logo{
+            font-family: Monospace;
+            font-size: 30px;
+            font-weight: 800;
+            user-select: none;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: orange;
+            margin-right: 30px;
+            font-size: 30px;
+        }
+        .navbar a:hover{
+            color: hsla(24, 100%, 50%, 0.863);
+        }
+        .navbar a:active{
+            color: skyblue;
+        }
+        .messagesContainer{
+            height: 80vh;
+            scroll-behavior: smooth;
+        }
+        .messagesRoot{
+            height: 77vh;
+            overflow: auto;
+        }
+        .user-msg{
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 4px 8px 10px 10px;
+            margin: 8px 4px;
+            border-radius: 14px 4px;
+            width: fit-content;
+            max-width: 360px;
+            word-wrap: break-word;
+        }
+        #msgInput{
+            background-color: transparent;
+            color: white;
+            font-family: Monospace;
+            font-size: 16px;
+            padding: 8px 4px;
+            outline: none;
+            width: 70%;
+            border: 2px solid #444;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        #msgInput:hover{
+            border-color: rgba(248, 248, 248, 0.575);
+        }
+        #msgInput:focus{
+            border-color: rgba(30, 165, 147, 0.719);
+        }
+        .msgInputCont{
+            background-color: #111;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 12px 8px;
+            border-top: 2px solid #444;
+        }
+        #sendMsgBtn{
+            background-color: transparent;
+            font-family: monospace;
+            color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #333;
+            padding: 6px 16px;
+            margin-right: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        #sendMsgBtn:hover{
+            background-color: #000000;
+        }
+        #sendMsgBtn:active{
+            background-color: #222;
+        }
+        #sendMsgBtn span{
+            font-size: 25px;
+            font-weight: 800;
+            color: bisque;
+        }
+        .userName{
+            color: rgba(59, 226, 218, 0.829);
+            font-weight: 800;
+            font-size: 14px;
+            user-select: none;
+        }
+        #user-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .msg-content{
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .userPfpAndNameContainer{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
 </style>
-
-    
 </head>
 <body>
     <div class="chatContainer">
