@@ -35,7 +35,7 @@ onValue(chatDataInDB, (snapshot) => {
   const chatData = snapshot.val();
   if (chatData) {
     const chatDataArry = Object.values(chatData);
-    messagesRoot.innerHTML = '';
+    messagesContainer.innerHTML = '';
     for(let i = 0; i < chatDataArry.length; i++){
       const userFullMsg = chatDataArry[i].split(':');
       const username = userFullMsg[0].trim();
