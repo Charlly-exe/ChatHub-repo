@@ -27,7 +27,7 @@ const database = getDatabase(app);
 const chatDataInDB = ref(database, 'chatData');
 
 // read data from database and add it to the DOM.
-const messagesRoot = document.querySelector('.messagesRoot');
+// const messagesRoot = document.querySelector('.messagesRoot');
 const messagesContainer = document.querySelector('.messagesContainer');
 
 
@@ -43,7 +43,7 @@ onValue(chatDataInDB, (snapshot) => {
       const userPhotoUrlPartOne = userFullMsg[2].trim();
       const userPhotoUrlPartTwo = userFullMsg[3].trim();
       const userPhotoFullUrl = `${userPhotoUrlPartOne}:${userPhotoUrlPartTwo}`;
-          messagesRoot.innerHTML += `<div class="user-msg">
+          messagesContainer.innerHTML += `<div class="user-msg">
           <div class="userPfpAndNameContainer">
           <img src="${userPhotoFullUrl}" alt="user-img" id="user-img">
           <span class="userName">${username}</span>
