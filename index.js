@@ -1,7 +1,3 @@
-
-import dotenv from './dotenv';
-dotenv.config();
-
 onload = () => {
     if(localStorage.userAuth === 'true' && localStorage.userPhoto != null){
       location.href = 'chat.html';
@@ -16,13 +12,12 @@ onload = () => {
     }
 };
 
-const apiKey = process.env.API_KEY;
 // Using Google Authentication:
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: apiKey,
+  apiKey: "AIzaSyAQQrMFjQalYH2O2Oi9V4uN53f_rugtJaQ",
   authDomain: "realtimechat-85333.firebaseapp.com",
   projectId: "realtimechat-85333",
   databaseURL: "https://realtimechat-85333-default-rtdb.europe-west1.firebasedatabase.app/",
@@ -37,7 +32,7 @@ const loginBtn = document.querySelector('.loginBtn');
 const loginInput = document.querySelector('.loginInput');
 const usernameInput = document.querySelector('.username-input');
 
-let correctLoginKey = process.env.LOGIN_KEY;
+let correctLoginKey = 'HJWAE8FRU3QINF8834NRJEW8UFU834';
 loginBtn.addEventListener('click', () => {
 
   if(loginInput.value === correctLoginKey && usernameInput.value.length >= 4 && usernameInput.value.length <= 20){
