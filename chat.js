@@ -55,7 +55,6 @@ onValue(chatDataInDB, (snapshot) => {
 
           let replyBtns = document.querySelectorAll('.replyBtn');
           Array.from(replyBtns).forEach(btn => {
-            console.log(btn);
             btn.addEventListener('click', () => {
               msgInput.value = '';
               const elParent = btn.parentElement.children.item(0);
