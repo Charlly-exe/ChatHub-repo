@@ -52,7 +52,14 @@ onValue(chatDataInDB, (snapshot) => {
             <button id="reply-btn" class="material-symbols-outlined">reply</button>
           </div>
           </div>`;
-          
+        
+        let replyBtn = document.getElementById('reply-btn');
+        replyBtn.addEventListener('click', () => {
+          msgInput.value = '';
+          const elParent = replyBtn.parentElement.children.item(0);
+          const username = elParent.children.item(1).textContent;
+          msgInput.value = `@${username}`;
+});
         }
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
   } else {
@@ -86,10 +93,4 @@ msgInput.addEventListener('keydown', (event) => {
   }
 });
 
-let replyBtn = document.getElementById('reply-btn');
-replyBtn.addEventListener('click', () => {
-  msgInput.value = '';
-  const elParent = replyBtn.parentElement.children.item(0);
-  const username = elParent.children.item(1).textContent;
-  msgInput.value = `@${username}`;
-});
+
