@@ -86,7 +86,7 @@ msgInput.addEventListener('keydown', (event) => {
   }
 });
 
-const replyBtn = document.getElementById('reply-btn');
+let replyBtn = document.getElementById('reply-btn');
 replyBtn.addEventListener('click', () => {
   msgInput.value = '';
   const elParent = replyBtn.parentElement.children.item(0);
