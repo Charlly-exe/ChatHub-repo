@@ -48,7 +48,8 @@ onValue(chatDataInDB, (snapshot) => {
           <img src="${userPhotoFullUrl}" alt="user-img" id="user-img">
           <span class="userName">${username}</span>
           </div>
-          <span class="msg-content">${userMsg}</span>
+          <span class="msg-content">${userMsg}</span> <br>
+            <button id="reply-btn" class="material-symbols-outlined">reply</button>
           </div>
           </div>`;
           
@@ -83,4 +84,12 @@ msgInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     sendMsgBtn.click();
   }
+});
+
+const replyBtn = document.getElementById('reply-btn');
+replyBtn.addEventListener('click', () => {
+  msgInput.value = '';
+  const elParent = replyBtn.parentElement.children.item(0);
+  const username = elParent.children.item(1).textContent;
+  msgInput.value = `@${username}`;
 });
