@@ -80,7 +80,7 @@ sendMsgBtn.addEventListener('click', () => {
       push(chatDataInDB, `${localStorage.username}: Empty Message ;):${localStorage.userPhoto}`);
     }
     else{
-      push(chatDataInDB, `${localStorage.username}: ${messageValue}:${localStorage.userPhoto}`);
+      push(chatDataInDB, localStorage.username +':'+ messageValue +':'+ localStorage.userPhoto);
       msgInput.value = '';
     }
   }
