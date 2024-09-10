@@ -1,6 +1,6 @@
 onload = () => {
     if(localStorage.userAuth === 'true' && localStorage.userPhoto != null){
-      location.href = 'chat.html';
+      location.href = './chat';
     }
     else{
       if(localStorage.username != null){
@@ -53,7 +53,7 @@ signInWithPopup(auth, provider)
     localStorage.userPhoto = userPhotoUrl;
 
     localStorage.userAuth = 'true';
-    location.href = 'chat.html';
+    location.href = './chat';
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
